@@ -1,3 +1,4 @@
+```sql
 CREATE DATABASE FelixElectronics;
 GO
 USE FelixElectronics;
@@ -42,3 +43,4 @@ CREATE TABLE Equipo(
 	CONSTRAINT FK_Orden FOREIGN KEY (id_orden) REFERENCES Orden(id_orden),
 	CONSTRAINT FK_Tenico FOREIGN KEY (id_tecnico) REFERENCES Tecnico(id_tecnico)
 );
+````
