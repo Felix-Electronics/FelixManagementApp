@@ -1,3 +1,11 @@
+using FelixManagementApp.Data;
+using FelixManagementApp.Forms;
+using FelixManagementApp.Repositories;
+using FelixManagementApp.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
 namespace FelixManagementApp
 {
     internal static class Program
@@ -5,13 +13,51 @@ namespace FelixManagementApp
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
+        public static IConfiguration Configuration;
+
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("App.config", optional: false, reloadOnChange: true);
+
+            Configuration = builder.Build();
+
+            var services = new ServiceCollection();
+            ConfigureServices(services);
+
+            using (var serviceProvider = services.BuildServiceProvider())
+            {
+                var mainForm = serviceProvider.GetRequiredService<FrmCliente>();
+                Application.Run(mainForm);
+            }
+        }
+
+        private static void ConfigureServices(ServiceCollection services)
+        {
+            // Registro del DbContext
+            services.AddDbContext<FelixElectronicsContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("FelixElectronicsDB")));
+
+            // Registro del Unit of Work
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            // Registro de los servicios
+            services.AddScoped<IClienteService, ClienteService>();
+            services.AddScoped<ITecnicoService, TecnicoService>();
+            services.AddScoped<IOrdenService, OrdenService>();
+            services.AddScoped<IEquipoService, EquipoService>();
+
+            // Registro de los formularios
+            services.AddTransient<FrmEquipo>();
+            services.AddTransient<FrmCliente>();
+            services.AddTransient<FrmAgregarCliente>();
+            services.AddTransient<SelectClienteForm>();
         }
     }
 }
