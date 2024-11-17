@@ -11,5 +11,7 @@ namespace FelixManagementApp.Services
     {
         Task<Tecnico> GetTecnicoByIdAsync(int id);
         Task<IEnumerable<Tecnico>> GetAllTecnicosAsync();
+        
+        Task CrearTecnicoAsync(Tecnico tecnico);
     }
 }

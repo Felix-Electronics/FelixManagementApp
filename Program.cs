@@ -13,7 +13,7 @@ namespace FelixManagementApp
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
-        public static IConfiguration Configuration;
+        public static IConfiguration configuration;
 
         [STAThread]
         static void Main()
@@ -24,16 +24,16 @@ namespace FelixManagementApp
 
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("App.config", optional: false, reloadOnChange: true);
+                .AddJsonFile("C:\\Users\\alex2\\source\\repos\\FelixManagementApp\\appsettings.json", optional: false, reloadOnChange: true);
 
-            Configuration = builder.Build();
+            configuration = builder.Build();
 
             var services = new ServiceCollection();
             ConfigureServices(services);
 
             using (var serviceProvider = services.BuildServiceProvider())
             {
-                var mainForm = serviceProvider.GetRequiredService<FrmCliente>();
+                var mainForm = serviceProvider.GetRequiredService<FrmAgregarCliente>();
                 Application.Run(mainForm);
             }
         }
@@ -42,7 +42,7 @@ namespace FelixManagementApp
         {
             // Registro del DbContext
             services.AddDbContext<FelixElectronicsContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("FelixElectronicsDB")));
+                options.UseSqlServer(configuration.GetConnectionString("FelixElectronicsDB")));
 
             // Registro del Unit of Work
             services.AddScoped<IUnitOfWork, UnitOfWork>();

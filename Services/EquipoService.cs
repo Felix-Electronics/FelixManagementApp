@@ -35,7 +35,7 @@ namespace FelixManagementApp.Services
             try
             {
                 var equipo = await _unitOfWork.EquipoRepository.GetByIdAsync(id);
-                await _unitOfWork.EquipoRepository.DeleteAsync(equipo);
+                await _unitOfWork.EquipoRepository.DeleteAsync(equipo.id_equipo);
                 await _unitOfWork.SaveChangesAsync();
             }
             catch (Exception ex)
@@ -78,6 +78,46 @@ namespace FelixManagementApp.Services
             catch (Exception ex)
             {
                 throw new Exception("Error al actualizar el equipo", ex);
+            }
+        }
+
+        public async Task<IEnumerable<Equipo>> GetEquiposByClienteIdAsync(int clienteId)
+        {
+            try
+            {
+                var equipos = await _unitOfWork.EquipoRepository.GetAllAsync();
+                return equipos.Where(e => e.id_cliente == clienteId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener los equipos", ex);
+            }
+        }
+
+        public async Task<IEnumerable<Equipo>> GetEquiposByOrdenIdAsync(int ordenId)
+        {
+            try
+            {
+                //await
+                var equipos = await _unitOfWork.EquipoRepository.GetAllAsync();
+                return equipos.Where(e => e.id_orden == ordenId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener los equipos", ex);
+            }
+        }
+
+        public async Task<IEnumerable<Equipo>> GetEquiposByTecnicoIdAsync(int tecnicoId)
+        {
+            try
+            {
+                var equipos = await _unitOfWork.EquipoRepository.GetAllAsync();
+                return equipos.Where(e => e.id_tecnico == tecnicoId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener los equipos", ex);
             }
         }
     }

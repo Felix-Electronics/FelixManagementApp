@@ -40,7 +40,9 @@ CREATE TABLE Equipo(
 	fecha_entrega DATETIME NULL,
 	id_orden INT NOT NULL,
 	id_tecnico INT NOT NULL,
+	id_cliente INT NOT NULL,
 	CONSTRAINT FK_Orden FOREIGN KEY (id_orden) REFERENCES Orden(id_orden),
-	CONSTRAINT FK_Tenico FOREIGN KEY (id_tecnico) REFERENCES Tecnico(id_tecnico)
+	CONSTRAINT FK_Tenico FOREIGN KEY (id_tecnico) REFERENCES Tecnico(id_tecnico),
+	CONSTRAINT FK_ClienteEquipo FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
 );
 ````

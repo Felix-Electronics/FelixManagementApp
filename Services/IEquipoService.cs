@@ -14,5 +14,9 @@ namespace FelixManagementApp.Services
         Task CreateEquipoAsync(Equipo equipo);
         Task UpdateEquipoAsync(Equipo equipo);
         Task DeleteEquipoAsync(int id);
+        Task<IEnumerable<Equipo>> GetEquiposByClienteIdAsync(int clienteId);
+        Task<IEnumerable<Equipo>> GetEquiposByOrdenIdAsync(int ordenId);
+
+        Task<IEnumerable<Equipo>> GetEquiposByTecnicoIdAsync(int tecnicoId);
     }
 }

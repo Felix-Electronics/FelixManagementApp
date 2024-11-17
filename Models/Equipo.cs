@@ -18,6 +18,8 @@ namespace FelixManagementApp.Models
         public DateTime? fecha_entrega { get; set; }
         public int id_orden { get; set; }
         public int id_tecnico { get; set; }
+        public int id_cliente { get; set; }
+        public virtual Cliente? Cliente { get; set; }
         public virtual Orden? Orden { get; set; }
         public virtual Tecnico? Tecnico { get; set; }
     }

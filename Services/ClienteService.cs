@@ -36,8 +36,7 @@ namespace FelixManagementApp.Services
             }
             catch (Exception ex)
             {
-                // Aquí puedes manejar el logging de errores
-                throw new Exception("Error al crear el cliente", ex);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
