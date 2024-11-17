@@ -70,6 +70,11 @@ public class FelixElectronicsContext : DbContext
                   .WithMany()
                   .HasForeignKey(e => e.id_tecnico)
                   .OnDelete(DeleteBehavior.Restrict);
+            
+            entity.HasOne(e => e.Cliente)
+                  .WithMany()
+                  .HasForeignKey(e => e.id_cliente)
+                  .OnDelete(DeleteBehavior.Restrict);
         });
     }
 }
