@@ -36,7 +36,8 @@ namespace FelixManagementApp.Repositories
 
         public virtual async Task UpdateAsync(T entity)
         {
-            _dbSet.Update(entity);
+            _context.Entry(entity).State = EntityState.Modified;
+            return;
         }
 
         public virtual async Task DeleteAsync(int id)

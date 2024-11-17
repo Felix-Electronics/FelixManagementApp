@@ -1,5 +1,6 @@
 ﻿using FelixManagementApp.Models;
 using FelixManagementApp.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,8 +45,17 @@ namespace FelixManagementApp.Services
         {
             try
             {
-                await _unitOfWork.ClienteRepository.UpdateAsync(cliente);
-                await _unitOfWork.SaveChangesAsync();
+                var existingCliente = await _unitOfWork.ClienteRepository.GetByIdAsync(cliente.id_cliente);
+                if (existingCliente != null)
+                {
+                    existingCliente.nombre = cliente.nombre;
+                    existingCliente.apellido_paterno = cliente.apellido_paterno;
+                    existingCliente.apellido_materno = cliente.apellido_materno;
+                    existingCliente.correo = cliente.correo;
+                    existingCliente.telefono = cliente.telefono;
+
+                    await _unitOfWork.SaveChangesAsync();
+                }
             }
             catch (Exception ex)
             {

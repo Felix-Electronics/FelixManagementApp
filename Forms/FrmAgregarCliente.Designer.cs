@@ -3,12 +3,12 @@
     partial class FrmAgregarCliente
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,183 +23,196 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            lblTitulo = new Label();
+            btnGuardar = new Button();
+            button1 = new Button();
+            lbl = new Label();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
-            textBox5 = new TextBox();
-            label6 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            txtNombre = new TextBox();
+            txtApellidoPaterno = new TextBox();
+            txtApellidoMaterno = new TextBox();
+            txtCorreo = new TextBox();
+            txtTelefono = new TextBox();
             SuspendLayout();
             // 
-            // textBox1
+            // lblTitulo
             // 
-            textBox1.Location = new Point(232, 67);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(187, 27);
-            textBox1.TabIndex = 0;
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.ForeColor = Color.White;
+            lblTitulo.Location = new Point(207, 22);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(198, 37);
+            lblTitulo.TabIndex = 1;
+            lblTitulo.Text = "Nuevo Cliente";
             // 
-            // textBox2
+            // btnGuardar
             // 
-            textBox2.Location = new Point(182, 105);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(237, 27);
-            textBox2.TabIndex = 1;
+            btnGuardar.BackColor = Color.FromArgb(64, 68, 75);
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Location = new Point(235, 361);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(170, 29);
+            btnGuardar.TabIndex = 5;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
-            // textBox3
+            // button1
             // 
-            textBox3.Location = new Point(182, 144);
-            textBox3.Margin = new Padding(3, 4, 3, 4);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(237, 27);
-            textBox3.TabIndex = 2;
+            button1.BackColor = Color.FromArgb(64, 68, 75);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(517, 409);
+            button1.Name = "button1";
+            button1.Size = new Size(91, 29);
+            button1.TabIndex = 6;
+            button1.Text = "Volver";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
-            // textBox4
+            // lbl
             // 
-            textBox4.Location = new Point(182, 183);
-            textBox4.Margin = new Padding(3, 4, 3, 4);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(237, 27);
-            textBox4.TabIndex = 3;
+            lbl.AutoSize = true;
+            lbl.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            lbl.ForeColor = Color.White;
+            lbl.Location = new Point(42, 89);
+            lbl.Name = "lbl";
+            lbl.Size = new Size(86, 25);
+            lbl.TabIndex = 7;
+            lbl.Text = "Nombre";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(167, 71);
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(342, 89);
             label1.Name = "label1";
-            label1.Size = new Size(64, 20);
-            label1.TabIndex = 4;
-            label1.Text = "Nombre";
+            label1.Size = new Size(86, 25);
+            label1.TabIndex = 8;
+            label1.Text = "Apellido";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(66, 109);
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(43, 165);
             label2.Name = "label2";
-            label2.Size = new Size(120, 20);
-            label2.TabIndex = 5;
-            label2.Text = "Apellido Paterno";
+            label2.Size = new Size(167, 25);
+            label2.TabIndex = 9;
+            label2.Text = "Apellido materno";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(62, 148);
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(349, 165);
             label3.Name = "label3";
-            label3.Size = new Size(126, 20);
-            label3.TabIndex = 6;
-            label3.Text = "Apellido Materno";
-            label3.TextAlign = ContentAlignment.TopRight;
+            label3.Size = new Size(74, 25);
+            label3.TabIndex = 10;
+            label3.Text = "Correo";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(126, 187);
+            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(42, 237);
             label4.Name = "label4";
-            label4.Size = new Size(54, 20);
-            label4.TabIndex = 7;
-            label4.Text = "Correo";
+            label4.Size = new Size(89, 25);
+            label4.TabIndex = 11;
+            label4.Text = "Telefono";
             // 
-            // label5
+            // txtNombre
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(67, 225);
-            label5.Name = "label5";
-            label5.Size = new Size(117, 20);
-            label5.TabIndex = 8;
-            label5.Text = " Número Celular";
+            txtNombre.Location = new Point(47, 117);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(277, 23);
+            txtNombre.TabIndex = 12;
             // 
-            // textBox5
+            // txtApellidoPaterno
             // 
-            textBox5.Location = new Point(182, 221);
-            textBox5.Margin = new Padding(3, 4, 3, 4);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(237, 27);
-            textBox5.TabIndex = 9;
+            txtApellidoPaterno.Location = new Point(349, 117);
+            txtApellidoPaterno.Name = "txtApellidoPaterno";
+            txtApellidoPaterno.Size = new Size(277, 23);
+            txtApellidoPaterno.TabIndex = 13;
             // 
-            // label6
+            // txtApellidoMaterno
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Tahoma", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(97, 12);
-            label6.Name = "label6";
-            label6.Size = new Size(268, 36);
-            label6.TabIndex = 10;
-            label6.Text = "Registrar Cliente";
+            txtApellidoMaterno.Location = new Point(47, 193);
+            txtApellidoMaterno.Name = "txtApellidoMaterno";
+            txtApellidoMaterno.Size = new Size(277, 23);
+            txtApellidoMaterno.TabIndex = 14;
             // 
-            // button1
+            // txtCorreo
             // 
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(167, 277);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(121, 45);
-            button1.TabIndex = 11;
-            button1.Text = "Registrar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            txtCorreo.Location = new Point(349, 193);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(277, 23);
+            txtCorreo.TabIndex = 15;
             // 
-            // button2
+            // txtTelefono
             // 
-            button2.Location = new Point(334, 288);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(86, 31);
-            button2.TabIndex = 12;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            txtTelefono.Location = new Point(47, 265);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(277, 23);
+            txtTelefono.TabIndex = 16;
             // 
             // FrmAgregarCliente
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(456, 335);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(label6);
-            Controls.Add(textBox5);
-            Controls.Add(label5);
+            AutoScaleMode = AutoScaleMode.None;
+            BackColor = Color.FromArgb(44, 47, 51);
+            ClientSize = new Size(638, 450);
+            Controls.Add(txtTelefono);
+            Controls.Add(txtCorreo);
+            Controls.Add(txtApellidoMaterno);
+            Controls.Add(txtApellidoPaterno);
+            Controls.Add(txtNombre);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Margin = new Padding(3, 4, 3, 4);
+            Controls.Add(lbl);
+            Controls.Add(button1);
+            Controls.Add(btnGuardar);
+            Controls.Add(lblTitulo);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FrmAgregarCliente";
-            Text = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Felix Elextronics";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private Label lblTitulo;
+        private Button btnGuardar;
+        private Button button1;
+        private Label lbl;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
-        private Label label5;
-        private TextBox textBox5;
-        private Label label6;
-        private Button button1;
-        private Button button2;
+        private TextBox txtNombre;
+        private TextBox txtApellidoPaterno;
+        private TextBox txtApellidoMaterno;
+        private TextBox txtCorreo;
+        private TextBox txtTelefono;
     }
 }

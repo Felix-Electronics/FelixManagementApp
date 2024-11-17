@@ -24,7 +24,7 @@ namespace FelixManagementApp
 
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("C:\\Users\\alex2\\source\\repos\\FelixManagementApp\\appsettings.json", optional: false, reloadOnChange: true);
+                .AddJsonFile("appsettings.json");
 
             configuration = builder.Build();
 
@@ -33,7 +33,7 @@ namespace FelixManagementApp
 
             using (var serviceProvider = services.BuildServiceProvider())
             {
-                var mainForm = serviceProvider.GetRequiredService<FrmAgregarCliente>();
+                var mainForm = serviceProvider.GetRequiredService<FrmCliente>();
                 Application.Run(mainForm);
             }
         }
@@ -54,10 +54,8 @@ namespace FelixManagementApp
             services.AddScoped<IEquipoService, EquipoService>();
 
             // Registro de los formularios
-            services.AddTransient<FrmEquipo>();
             services.AddTransient<FrmCliente>();
             services.AddTransient<FrmAgregarCliente>();
-            services.AddTransient<SelectClienteForm>();
         }
     }
 }
