@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace FelixManagementApp.Models
 {
-    public class Cliente
+    public class Tecnico
     {
-        public int id_cliente { get; set; }
+        public int id_tecnico { get; set; }
         public string nombre { get; set; } = string.Empty;
         public string apellido_paterno { get; set; } = string.Empty;
         public string apellido_materno { get; set; } = string.Empty;
         public string correo { get; set; } = string.Empty;
-        public string telefono { get; set; } = string.Empty;
+        public string contrasenia { get; set; } = string.Empty;
     }
 }
