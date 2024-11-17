@@ -10,7 +10,7 @@ namespace FelixManagementApp.Repositories
     public interface IUnitOfWork : IDisposable
     {
         IRepository<Cliente> ClienteRepository { get; }
-        IRepository<Tecnico> TecnicoRepository { get; }
+        ITecnicoRepository TecnicoRepository { get; }
         IRepository<Orden> OrdenRepository { get; }
         IRepository<Equipo> EquipoRepository { get; }
         Task<int> SaveChangesAsync();

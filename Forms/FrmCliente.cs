@@ -18,14 +18,16 @@ namespace FelixManagementApp.Forms
         private readonly IClienteService _clienteService;
         private readonly IEquipoService _equipoService;
         private readonly IOrdenService _ordenService;
+        private readonly ITecnicoService _tecnicoService;
         public Cliente? ClienteCreado { get; private set; }
 
-        public FrmCliente(IClienteService clienteService, IEquipoService equipoService, IOrdenService ordenService)
+        public FrmCliente(IClienteService clienteService, IEquipoService equipoService, IOrdenService ordenService, ITecnicoService tecnicoService)
         {
             InitializeComponent();
             _clienteService = clienteService;
             _equipoService = equipoService;
             _ordenService = ordenService;
+            _tecnicoService = tecnicoService;
             LoadClientes();
         }
 
@@ -53,6 +55,7 @@ namespace FelixManagementApp.Forms
                 btnEliminar.Width = 150;
                 dataGridView1.Columns.Add(btnEliminar);
             }
+            RealizarLogin();
         }
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
@@ -136,6 +139,19 @@ namespace FelixManagementApp.Forms
                 );
                 // Indicar que el evento está manejado
                 e.Handled = true;
+            }
+        }
+
+        public async Task RealizarLogin()
+        {
+            Tecnico login = await _tecnicoService.IniciarSesionAsync("laura.fernandez@gmail.com", "password123");
+            if (login == null)
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Inicio de sesión exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

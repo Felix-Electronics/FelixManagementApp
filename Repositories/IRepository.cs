@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FelixManagementApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,7 @@ namespace FelixManagementApp.Repositories
         Task AddAsync(T entity);
         Task UpdateAsync(T entity);
         Task DeleteAsync(int id);
+
+
     }
 }

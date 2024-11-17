@@ -52,5 +52,51 @@ namespace FelixManagementApp.Services
                 throw new Exception("Error al crear el técnico", ex);
             }
         }
+
+        public async Task<Tecnico> IniciarSesionAsync(string correo, string contrasenia)
+        {
+            try
+            {
+                return await _unitOfWork.TecnicoRepository.IniciarSesionAsync(correo, contrasenia);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al iniciar sesión", ex);
+            }
+        }
+
+        public async Task UpdateTecnicoAsync(Tecnico tecnico)
+        {
+            try
+            {
+                var existingTecnico = await _unitOfWork.TecnicoRepository.GetByIdAsync(tecnico.id_tecnico);
+                if (existingTecnico != null)
+                {
+                    existingTecnico.nombre = tecnico.nombre;
+                    existingTecnico.apellido_paterno = tecnico.apellido_paterno;
+                    existingTecnico.apellido_materno = tecnico.apellido_materno;
+                    existingTecnico.correo = tecnico.correo;
+                    existingTecnico.contrasenia = tecnico.contrasenia;
+                    await _unitOfWork.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al actualizar el técnico", ex);
+            }
+        }
+
+        public async Task DeleteTecnicoAsync(int id)
+        {
+            try
+            {
+                await _unitOfWork.TecnicoRepository.DeleteAsync(id);
+                await _unitOfWork.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al eliminar el técnico", ex);
+            }
+        }
     }
 }
