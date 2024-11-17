@@ -13,5 +13,12 @@ namespace FelixManagementApp.Services
         Task<IEnumerable<Tecnico>> GetAllTecnicosAsync();
         
         Task CrearTecnicoAsync(Tecnico tecnico);
+
+        //Iniciar sesión
+        Task<Tecnico> IniciarSesionAsync(string correo, string contrasenia);
+
+        Task UpdateTecnicoAsync(Tecnico tecnico);
+
+        Task DeleteTecnicoAsync(int id);
     }
 }

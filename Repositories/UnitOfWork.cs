@@ -12,28 +12,29 @@ namespace FelixManagementApp.Repositories
     {
         private readonly FelixElectronicsContext _context;
         private IRepository<Cliente> _clienteRepository;
-        private IRepository<Tecnico> _tecnicoRepository;
+        private ITecnicoRepository _tecnicoRepository;
         private IRepository<Orden> _ordenRepository;
         private IRepository<Equipo> _equipoRepository;
 
         public UnitOfWork(FelixElectronicsContext context)
         {
             _context = context;
+            this._tecnicoRepository = new TecnicoRepository(_context);
+
         }
 
+        public ITecnicoRepository TecnicoRepository
+        {
+            get
+            {
+                return _tecnicoRepository;
+            }
+        }
         public IRepository<Cliente> ClienteRepository
         {
             get
             {
                 return _clienteRepository ??= new Repository<Cliente>(_context);
-            }
-        }
-
-        public IRepository<Tecnico> TecnicoRepository
-        {
-            get
-            {
-                return _tecnicoRepository ??= new Repository<Tecnico>(_context);
             }
         }
 
