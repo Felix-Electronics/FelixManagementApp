@@ -25,6 +25,7 @@ CREATE TABLE Tecnico(
 CREATE TABLE Orden(
 	id_orden INT IDENTITY(1,1) PRIMARY KEY,
 	fecha_creacion DATETIME NOT NULL,
+	total DECIMAL(10,2) NULL,
 	id_cliente INT NOT NULL,
 	CONSTRAINT FK_Cliente FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
 );
@@ -61,11 +62,11 @@ VALUES
 ('Pedro', 'Gómez', 'Rojas', 'pedro.gomez@gmail.com', 'securepass');
 GO
 -- Inserciones para Orden
-INSERT INTO Orden (fecha_creacion, id_cliente)
+INSERT INTO Orden (fecha_creacion, id_cliente, total)
 VALUES 
-(GETDATE(), 1), -- Orden de Juan
-(GETDATE(), 2), -- Orden de María
-(GETDATE(), 3); -- Orden de Carlos
+(GETDATE(), 1, 1002.00), -- Orden de Juan
+(GETDATE(), 2, 2500.00), -- Orden de María
+(GETDATE(), 3, 850.00); -- Orden de Carlos
 GO
 -- Inserciones para Equipo
 INSERT INTO Equipo (marca, modelo, contrasenia_equipo, accesorios, problema, estatus, fecha_entrega, id_orden, id_tecnico, id_cliente)
