@@ -30,19 +30,19 @@
         {
             cbCliente = new ComboBox();
             button1 = new Button();
-            dataGridView1 = new DataGridView();
+            dgvComputadoras = new DataGridView();
             button2 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            richTextBox1 = new RichTextBox();
-            comboBox2 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
-            textBox5 = new TextBox();
-            comboBox3 = new ComboBox();
+            txtMarca = new TextBox();
+            txtModelo = new TextBox();
+            txtContra = new TextBox();
+            txtAccesorios = new TextBox();
+            txtProblema = new RichTextBox();
+            cbEstatus = new ComboBox();
+            timePicker = new DateTimePicker();
+            txtCosto = new TextBox();
+            cbTecnico = new ComboBox();
             btnGuardar = new Button();
-            button5 = new Button();
+            btnAgregarComp = new Button();
             lbl = new Label();
             label1 = new Label();
             label2 = new Label();
@@ -55,7 +55,7 @@
             label10 = new Label();
             label9 = new Label();
             label11 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvComputadoras).BeginInit();
             SuspendLayout();
             // 
             // cbCliente
@@ -75,13 +75,13 @@
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvComputadoras
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(306, 12);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(482, 285);
-            dataGridView1.TabIndex = 3;
+            dgvComputadoras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvComputadoras.Location = new Point(306, 12);
+            dgvComputadoras.Name = "dgvComputadoras";
+            dgvComputadoras.Size = new Size(482, 285);
+            dgvComputadoras.TabIndex = 3;
             // 
             // button2
             // 
@@ -92,71 +92,71 @@
             button2.Text = "button2";
             button2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtMarca
             // 
-            textBox1.Location = new Point(84, 93);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(194, 23);
-            textBox1.TabIndex = 5;
+            txtMarca.Location = new Point(84, 93);
+            txtMarca.Name = "txtMarca";
+            txtMarca.Size = new Size(194, 23);
+            txtMarca.TabIndex = 5;
             // 
-            // textBox2
+            // txtModelo
             // 
-            textBox2.Location = new Point(84, 139);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(194, 23);
-            textBox2.TabIndex = 7;
+            txtModelo.Location = new Point(84, 139);
+            txtModelo.Name = "txtModelo";
+            txtModelo.Size = new Size(194, 23);
+            txtModelo.TabIndex = 7;
             // 
-            // textBox3
+            // txtContra
             // 
-            textBox3.Location = new Point(84, 182);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(194, 23);
-            textBox3.TabIndex = 9;
+            txtContra.Location = new Point(84, 182);
+            txtContra.Name = "txtContra";
+            txtContra.Size = new Size(194, 23);
+            txtContra.TabIndex = 9;
             // 
-            // textBox4
+            // txtAccesorios
             // 
-            textBox4.Location = new Point(84, 225);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(194, 23);
-            textBox4.TabIndex = 11;
+            txtAccesorios.Location = new Point(84, 225);
+            txtAccesorios.Name = "txtAccesorios";
+            txtAccesorios.Size = new Size(194, 23);
+            txtAccesorios.TabIndex = 11;
             // 
-            // richTextBox1
+            // txtProblema
             // 
-            richTextBox1.Location = new Point(84, 268);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(194, 96);
-            richTextBox1.TabIndex = 15;
-            richTextBox1.Text = "";
+            txtProblema.Location = new Point(84, 268);
+            txtProblema.Name = "txtProblema";
+            txtProblema.Size = new Size(194, 96);
+            txtProblema.TabIndex = 15;
+            txtProblema.Text = "";
             // 
-            // comboBox2
+            // cbEstatus
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(84, 382);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(194, 23);
-            comboBox2.TabIndex = 18;
+            cbEstatus.FormattingEnabled = true;
+            cbEstatus.Location = new Point(84, 382);
+            cbEstatus.Name = "cbEstatus";
+            cbEstatus.Size = new Size(194, 23);
+            cbEstatus.TabIndex = 18;
             // 
-            // dateTimePicker1
+            // timePicker
             // 
-            dateTimePicker1.Location = new Point(84, 424);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(194, 23);
-            dateTimePicker1.TabIndex = 19;
+            timePicker.Location = new Point(84, 424);
+            timePicker.Name = "timePicker";
+            timePicker.Size = new Size(194, 23);
+            timePicker.TabIndex = 19;
             // 
-            // textBox5
+            // txtCosto
             // 
-            textBox5.Location = new Point(84, 467);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(194, 23);
-            textBox5.TabIndex = 21;
+            txtCosto.Location = new Point(84, 467);
+            txtCosto.Name = "txtCosto";
+            txtCosto.Size = new Size(194, 23);
+            txtCosto.TabIndex = 21;
             // 
-            // comboBox3
+            // cbTecnico
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(84, 509);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(194, 23);
-            comboBox3.TabIndex = 24;
+            cbTecnico.FormattingEnabled = true;
+            cbTecnico.Location = new Point(84, 509);
+            cbTecnico.Name = "cbTecnico";
+            cbTecnico.Size = new Size(194, 23);
+            cbTecnico.TabIndex = 24;
             // 
             // btnGuardar
             // 
@@ -172,19 +172,20 @@
             btnGuardar.Text = "CREAR NUEVA ORDEN";
             btnGuardar.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnAgregarComp
             // 
-            button5.BackColor = Color.FromArgb(64, 68, 75);
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Consolas", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(98, 544);
-            button5.Name = "button5";
-            button5.Size = new Size(164, 23);
-            button5.TabIndex = 28;
-            button5.Text = "AGREGAR COMPUTADORA";
-            button5.UseVisualStyleBackColor = false;
+            btnAgregarComp.BackColor = Color.FromArgb(64, 68, 75);
+            btnAgregarComp.FlatAppearance.BorderSize = 0;
+            btnAgregarComp.FlatStyle = FlatStyle.Flat;
+            btnAgregarComp.Font = new Font("Consolas", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAgregarComp.ForeColor = Color.White;
+            btnAgregarComp.Location = new Point(98, 544);
+            btnAgregarComp.Name = "btnAgregarComp";
+            btnAgregarComp.Size = new Size(164, 23);
+            btnAgregarComp.TabIndex = 28;
+            btnAgregarComp.Text = "AGREGAR COMPUTADORA";
+            btnAgregarComp.UseVisualStyleBackColor = false;
+            btnAgregarComp.Click += btnAgregarComp_Click;
             // 
             // lbl
             // 
@@ -336,24 +337,24 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(lbl);
-            Controls.Add(button5);
+            Controls.Add(btnAgregarComp);
             Controls.Add(btnGuardar);
-            Controls.Add(comboBox3);
-            Controls.Add(textBox5);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(comboBox2);
-            Controls.Add(richTextBox1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(cbTecnico);
+            Controls.Add(txtCosto);
+            Controls.Add(timePicker);
+            Controls.Add(cbEstatus);
+            Controls.Add(txtProblema);
+            Controls.Add(txtAccesorios);
+            Controls.Add(txtContra);
+            Controls.Add(txtModelo);
+            Controls.Add(txtMarca);
             Controls.Add(button2);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvComputadoras);
             Controls.Add(button1);
             Controls.Add(cbCliente);
             Name = "FrmCrearOrden";
             Text = "FrmCrearOrden";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvComputadoras).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -362,19 +363,19 @@
 
         private ComboBox cbCliente;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvComputadoras;
         private Button button2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private RichTextBox richTextBox1;
-        private ComboBox comboBox2;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox5;
-        private ComboBox comboBox3;
+        private TextBox txtMarca;
+        private TextBox txtModelo;
+        private TextBox txtContra;
+        private TextBox txtAccesorios;
+        private RichTextBox txtProblema;
+        private ComboBox cbEstatus;
+        private DateTimePicker timePicker;
+        private TextBox txtCosto;
+        private ComboBox cbTecnico;
         private Button btnGuardar;
-        private Button button5;
+        private Button btnAgregarComp;
         private Label lbl;
         private Label label1;
         private Label label2;

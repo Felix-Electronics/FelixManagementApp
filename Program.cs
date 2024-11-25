@@ -33,7 +33,7 @@ namespace FelixManagementApp
 
             using (var serviceProvider = services.BuildServiceProvider())
             {
-                var mainForm = serviceProvider.GetRequiredService<FrmCliente>();
+                var mainForm = serviceProvider.GetRequiredService<FrmCrearOrden>();
                 Application.Run(mainForm);
             }
         }
@@ -56,6 +56,7 @@ namespace FelixManagementApp
             // Registro de los formularios
             services.AddTransient<FrmCliente>();
             services.AddTransient<FrmAgregarCliente>();
+            services.AddTransient<FrmCrearOrden>();
         }
     }
 }
