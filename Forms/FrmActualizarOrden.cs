@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace FelixManagementApp.Forms
 {
-    public partial class FrmCrearOrden : Form
+    public partial class FrmActualizarOrden : Form
     {
         private readonly IClienteService _clienteService;
         private readonly IEquipoService _equipoService;
@@ -22,32 +22,25 @@ namespace FelixManagementApp.Forms
         List<Equipo> equipos;
         List<Tecnico> tecnicos;
         List<Orden> ordenes;
-        Orden? orden {  get; set; }
-        Cliente? cliente {  get; set; }
-
-
-        public FrmCrearOrden(IClienteService _clienteService, IEquipoService _equipoService, IOrdenService _ordenService, ITecnicoService _tecnicoService)
+        List<Equipo> nuevosequipos;
+        Orden orden { get; set; }
+        Cliente? cliente { get; set; }
+        public FrmActualizarOrden(IClienteService _clienteService, IEquipoService _equipoService, IOrdenService _ordenService, ITecnicoService _tecnicoService, Orden orden)
         {
             InitializeComponent();
             this._clienteService = _clienteService;
             this._equipoService = _equipoService;
             this._ordenService = _ordenService;
             this._tecnicoService = _tecnicoService;
+            this.orden = orden;
             clientes = new List<Cliente>();
             equipos = new List<Equipo>();
+            nuevosequipos = new List<Equipo>();
             tecnicos = new List<Tecnico>();
             ordenes = new List<Orden>();
             CargarClientes();
-
-
         }
-        private void CargarEstatus()
-        {
-            cbEstatus.Items.Clear();
-            cbEstatus.Items.Add("Pendiente");
-            cbEstatus.Items.Add("En reparación");
-            cbEstatus.Items.Add("Reparado");
-        }
+        
 
         private async void CargarClientes()
         {
@@ -75,7 +68,18 @@ namespace FelixManagementApp.Forms
             }
             CargarEstatus();
         }
-
+        private void CargarEstatus()
+        {
+            cbEstatus.Items.Clear();
+            cbEstatus.Items.Add("Pendiente");
+            cbEstatus.Items.Add("En reparación");
+            cbEstatus.Items.Add("Reparado");
+            
+        }
+        private async void CargarDatosOrden()
+        {
+            orden = await  _ordenService.GetOrdenByIdAsync(orden.id_orden);
+        }
         private void Computadoras()
         {
             dgvComputadoras.DataSource = null;
@@ -99,56 +103,6 @@ namespace FelixManagementApp.Forms
             dgvComputadoras.Columns["Orden"].Visible = false;
             dgvComputadoras.Columns["Tecnico"].Visible = false;
 
-        }
-
-        private void btnAgregarComp_Click(object sender, EventArgs e)
-        {
-
-            DateTime fecha = timePicker.Value;
-            Tecnico t = tecnicos.ElementAt(cbTecnico.SelectedIndex);
-            Equipo equipo = new Equipo()
-            {
-                marca = txtMarca.Text,
-                modelo = txtModelo.Text,
-                contrasenia_equipo = txtContra.Text,
-                accesorios = txtAccesorios.Text,
-                problema = txtProblema.Text,
-                estatus = cbEstatus.Text,
-                fecha_entrega = fecha,
-                id_tecnico = t.id_tecnico
-                //falta orden y tecnico xd
-            };
-            equipos.Add(equipo);
-            Computadoras();
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            cliente = clientes.ElementAt(cbCliente.SelectedIndex);
-            _ordenService.CrearOrdenConEquiposAsync(cliente.id_cliente);
-            obtenerUltimaOrden();
-        }
-        private async void obtenerUltimaOrden()
-        {
-            var ordenes = await _ordenService.GetAllOrdenesAsync();
-            this.ordenes = ordenes.ToList();
-            orden = ordenes.Last();
-            guardarEquipos();
-        }
-
-        private async void guardarEquipos()
-        {
-            foreach( var equipo in this.equipos)
-            {
-                equipo.id_cliente = cliente.id_cliente;
-                equipo.id_orden = orden.id_orden;
-                await _equipoService.CreateEquipoAsync(equipo);
-            }
         }
     }
 }

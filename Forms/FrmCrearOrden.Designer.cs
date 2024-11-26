@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             cbCliente = new ComboBox();
-            button1 = new Button();
             dgvComputadoras = new DataGridView();
-            button2 = new Button();
             txtMarca = new TextBox();
             txtModelo = new TextBox();
             txtContra = new TextBox();
@@ -50,30 +48,25 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            label8 = new Label();
             label7 = new Label();
             label10 = new Label();
             label9 = new Label();
             label11 = new Label();
+            label12 = new Label();
+            label13 = new Label();
+            button3 = new Button();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvComputadoras).BeginInit();
             SuspendLayout();
             // 
             // cbCliente
             // 
+            cbCliente.Enabled = false;
             cbCliente.FormattingEnabled = true;
             cbCliente.Location = new Point(84, 26);
             cbCliente.Name = "cbCliente";
             cbCliente.Size = new Size(194, 23);
             cbCliente.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(84, 55);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
             // 
             // dgvComputadoras
             // 
@@ -83,17 +76,9 @@
             dgvComputadoras.Size = new Size(482, 285);
             dgvComputadoras.TabIndex = 3;
             // 
-            // button2
-            // 
-            button2.Location = new Point(203, 55);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 4;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // txtMarca
             // 
+            txtMarca.Enabled = false;
             txtMarca.Location = new Point(84, 93);
             txtMarca.Name = "txtMarca";
             txtMarca.Size = new Size(194, 23);
@@ -101,6 +86,7 @@
             // 
             // txtModelo
             // 
+            txtModelo.Enabled = false;
             txtModelo.Location = new Point(84, 139);
             txtModelo.Name = "txtModelo";
             txtModelo.Size = new Size(194, 23);
@@ -108,6 +94,7 @@
             // 
             // txtContra
             // 
+            txtContra.Enabled = false;
             txtContra.Location = new Point(84, 182);
             txtContra.Name = "txtContra";
             txtContra.Size = new Size(194, 23);
@@ -115,6 +102,7 @@
             // 
             // txtAccesorios
             // 
+            txtAccesorios.Enabled = false;
             txtAccesorios.Location = new Point(84, 225);
             txtAccesorios.Name = "txtAccesorios";
             txtAccesorios.Size = new Size(194, 23);
@@ -122,6 +110,7 @@
             // 
             // txtProblema
             // 
+            txtProblema.Enabled = false;
             txtProblema.Location = new Point(84, 268);
             txtProblema.Name = "txtProblema";
             txtProblema.Size = new Size(194, 96);
@@ -130,6 +119,7 @@
             // 
             // cbEstatus
             // 
+            cbEstatus.Enabled = false;
             cbEstatus.FormattingEnabled = true;
             cbEstatus.Location = new Point(84, 382);
             cbEstatus.Name = "cbEstatus";
@@ -138,6 +128,7 @@
             // 
             // timePicker
             // 
+            timePicker.Enabled = false;
             timePicker.Location = new Point(84, 424);
             timePicker.Name = "timePicker";
             timePicker.Size = new Size(194, 23);
@@ -145,15 +136,16 @@
             // 
             // txtCosto
             // 
-            txtCosto.Location = new Point(84, 467);
+            txtCosto.Location = new Point(466, 314);
             txtCosto.Name = "txtCosto";
             txtCosto.Size = new Size(194, 23);
             txtCosto.TabIndex = 21;
             // 
             // cbTecnico
             // 
+            cbTecnico.Enabled = false;
             cbTecnico.FormattingEnabled = true;
-            cbTecnico.Location = new Point(84, 509);
+            cbTecnico.Location = new Point(84, 464);
             cbTecnico.Name = "cbTecnico";
             cbTecnico.Size = new Size(194, 23);
             cbTecnico.TabIndex = 24;
@@ -165,12 +157,13 @@
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(456, 315);
+            btnGuardar.Location = new Point(454, 356);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(216, 35);
             btnGuardar.TabIndex = 27;
             btnGuardar.Text = "CREAR NUEVA ORDEN";
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnAgregarComp
             // 
@@ -179,7 +172,7 @@
             btnAgregarComp.FlatStyle = FlatStyle.Flat;
             btnAgregarComp.Font = new Font("Consolas", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregarComp.ForeColor = Color.White;
-            btnAgregarComp.Location = new Point(98, 544);
+            btnAgregarComp.Location = new Point(96, 503);
             btnAgregarComp.Name = "btnAgregarComp";
             btnAgregarComp.Size = new Size(164, 23);
             btnAgregarComp.TabIndex = 28;
@@ -264,17 +257,6 @@
             label6.TabIndex = 35;
             label6.Text = "Estatus";
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(12, 470);
-            label8.Name = "label8";
-            label8.Size = new Size(38, 15);
-            label8.TabIndex = 37;
-            label8.Text = "Costo";
-            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -302,7 +284,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(4, 517);
+            label9.Location = new Point(4, 472);
             label9.Name = "label9";
             label9.Size = new Size(55, 15);
             label9.TabIndex = 42;
@@ -313,23 +295,77 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(4, 502);
+            label11.Location = new Point(4, 457);
             label11.Name = "label11";
             label11.Size = new Size(49, 15);
             label11.TabIndex = 41;
             label11.Text = "Técnico";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(388, 322);
+            label12.Name = "label12";
+            label12.Size = new Size(52, 15);
+            label12.TabIndex = 44;
+            label12.Text = "la orden";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(388, 307);
+            label13.Name = "label13";
+            label13.Size = new Size(55, 15);
+            label13.TabIndex = 43;
+            label13.Text = "Costo de";
+            label13.Click += label13_Click;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(64, 68, 75);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Consolas", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(84, 49);
+            button3.Name = "button3";
+            button3.Size = new Size(66, 40);
+            button3.TabIndex = 45;
+            button3.Text = "AGREGAR CLIENTE";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.FromArgb(64, 68, 75);
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Consolas", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(203, 49);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 40);
+            button4.TabIndex = 46;
+            button4.Text = "ACTUALIZAR CLIENTE";
+            button4.UseVisualStyleBackColor = false;
             // 
             // FrmCrearOrden
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(44, 47, 51);
-            ClientSize = new Size(800, 579);
+            ClientSize = new Size(800, 540);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(label12);
+            Controls.Add(label13);
             Controls.Add(label9);
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label7);
-            Controls.Add(label8);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -348,9 +384,7 @@
             Controls.Add(txtContra);
             Controls.Add(txtModelo);
             Controls.Add(txtMarca);
-            Controls.Add(button2);
             Controls.Add(dgvComputadoras);
-            Controls.Add(button1);
             Controls.Add(cbCliente);
             Name = "FrmCrearOrden";
             Text = "FrmCrearOrden";
@@ -362,9 +396,7 @@
         #endregion
 
         private ComboBox cbCliente;
-        private Button button1;
         private DataGridView dgvComputadoras;
-        private Button button2;
         private TextBox txtMarca;
         private TextBox txtModelo;
         private TextBox txtContra;
@@ -383,10 +415,13 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private Label label8;
         private Label label7;
         private Label label10;
         private Label label9;
         private Label label11;
+        private Label label12;
+        private Label label13;
+        private Button button3;
+        private Button button4;
     }
 }

@@ -16,7 +16,7 @@ namespace FelixManagementApp.Services
         {
             _context = context;
         }
-        public Task CrearOrdenConEquiposAsync(int clienteId, List<Equipo> equipos)
+        public Task CrearOrdenConEquiposAsync(int clienteId)
         {
             try
             {

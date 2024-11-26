@@ -9,7 +9,7 @@ namespace FelixManagementApp.Services
 {
     public interface IOrdenService
     {
-        Task CrearOrdenConEquiposAsync(int clienteId, List<Equipo> equipos);
+        Task CrearOrdenConEquiposAsync(int clienteId);
 
         //GetOrdenByIdAsync
         Task<Orden> GetOrdenByIdAsync(int id);
