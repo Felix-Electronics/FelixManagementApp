@@ -44,6 +44,7 @@ public class FelixElectronicsContext : DbContext
             entity.ToTable("Orden");
             entity.HasKey(e => e.id_orden);
             entity.Property(e => e.fecha_creacion).IsRequired();
+            entity.Property(e => e.total).HasColumnType("decimal(18,2)").IsRequired();
             entity.HasOne(e => e.Cliente)
                   .WithMany()
                   .HasForeignKey(e => e.id_cliente)

@@ -11,6 +11,8 @@ namespace FelixManagementApp.Models
         public int id_orden { get; set; }
         public DateTime fecha_creacion { get; set; }
         public int id_cliente { get; set; }
+
+        public decimal total { get; set; }
         public virtual Cliente? Cliente { get; set; }
     }
 }
