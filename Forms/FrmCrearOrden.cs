@@ -119,6 +119,7 @@ namespace FelixManagementApp.Forms
                 //falta orden y tecnico xd
             };
             equipos.Add(equipo);
+            limpiarElementos(false);
             Computadoras();
         }
 
@@ -130,7 +131,7 @@ namespace FelixManagementApp.Forms
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             cliente = clientes.ElementAt(cbCliente.SelectedIndex);
-            _ordenService.CrearOrdenConEquiposAsync(cliente.id_cliente);
+            _ordenService.CrearOrdenConEquiposAsync(cliente.id_cliente, decimal.Parse(txtCosto.Text));
             obtenerUltimaOrden();
         }
         private async void obtenerUltimaOrden()
@@ -148,6 +149,25 @@ namespace FelixManagementApp.Forms
                 equipo.id_cliente = cliente.id_cliente;
                 equipo.id_orden = orden.id_orden;
                 await _equipoService.CreateEquipoAsync(equipo);
+            }
+            MessageBox.Show("Orden creada", "Creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            limpiarElementos(true);
+        }
+
+        private void limpiarElementos(bool creacion)
+        {
+            cbCliente.Text = "";
+            txtMarca.Text = "";
+            txtModelo.Text = "";
+            txtContra.Text = "";
+            txtAccesorios.Text = "";
+            txtProblema.Text = "";
+            cbEstatus.Text = "";
+            if ( creacion)
+            {
+                txtCosto.Text = "";
+                equipos.Clear();
+                Computadoras();
             }
         }
     }

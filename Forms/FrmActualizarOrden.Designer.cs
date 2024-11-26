@@ -56,6 +56,9 @@
             cbCliente = new ComboBox();
             btnActualizarCliente = new Button();
             btnAgregarCliente = new Button();
+            btnTecnicos = new Button();
+            btnOrdenes = new Button();
+            btnClientes = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvComputadoras).BeginInit();
             SuspendLayout();
             // 
@@ -215,6 +218,7 @@
             btnAgregarComp.TabIndex = 59;
             btnAgregarComp.Text = "AGREGAR COMPUTADORA";
             btnAgregarComp.UseVisualStyleBackColor = false;
+            btnAgregarComp.Click += btnAgregarComp_Click;
             // 
             // btnGuardar
             // 
@@ -229,6 +233,7 @@
             btnGuardar.TabIndex = 58;
             btnGuardar.Text = "ACTUALIZAR ORDEN";
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // cbTecnico
             // 
@@ -341,12 +346,58 @@
             btnAgregarCliente.Text = "AGREGAR CLIENTE";
             btnAgregarCliente.UseVisualStyleBackColor = false;
             // 
+            // btnTecnicos
+            // 
+            btnTecnicos.BackColor = Color.FromArgb(64, 68, 75);
+            btnTecnicos.FlatAppearance.BorderSize = 0;
+            btnTecnicos.FlatStyle = FlatStyle.Flat;
+            btnTecnicos.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTecnicos.ForeColor = Color.White;
+            btnTecnicos.Location = new Point(416, 491);
+            btnTecnicos.Name = "btnTecnicos";
+            btnTecnicos.Size = new Size(121, 35);
+            btnTecnicos.TabIndex = 75;
+            btnTecnicos.Text = "TECNICOS";
+            btnTecnicos.UseVisualStyleBackColor = false;
+            // 
+            // btnOrdenes
+            // 
+            btnOrdenes.BackColor = Color.FromArgb(64, 68, 75);
+            btnOrdenes.FlatAppearance.BorderSize = 0;
+            btnOrdenes.FlatStyle = FlatStyle.Flat;
+            btnOrdenes.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnOrdenes.ForeColor = Color.White;
+            btnOrdenes.Location = new Point(671, 491);
+            btnOrdenes.Name = "btnOrdenes";
+            btnOrdenes.Size = new Size(121, 35);
+            btnOrdenes.TabIndex = 76;
+            btnOrdenes.Text = "ORDENES";
+            btnOrdenes.UseVisualStyleBackColor = false;
+            // 
+            // btnClientes
+            // 
+            btnClientes.BackColor = Color.FromArgb(64, 68, 75);
+            btnClientes.FlatAppearance.BorderSize = 0;
+            btnClientes.FlatStyle = FlatStyle.Flat;
+            btnClientes.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClientes.ForeColor = Color.White;
+            btnClientes.Location = new Point(543, 491);
+            btnClientes.Name = "btnClientes";
+            btnClientes.Size = new Size(121, 35);
+            btnClientes.TabIndex = 77;
+            btnClientes.Text = "CLIENTES";
+            btnClientes.UseVisualStyleBackColor = false;
+            btnClientes.Click += btnClientes_Click;
+            // 
             // FrmActualizarOrden
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(44, 47, 51);
             ClientSize = new Size(801, 538);
+            Controls.Add(btnClientes);
+            Controls.Add(btnOrdenes);
+            Controls.Add(btnTecnicos);
             Controls.Add(btnActualizarCliente);
             Controls.Add(btnAgregarCliente);
             Controls.Add(label12);
@@ -412,5 +463,8 @@
         private ComboBox cbCliente;
         private Button btnActualizarCliente;
         private Button btnAgregarCliente;
+        private Button btnTecnicos;
+        private Button btnOrdenes;
+        private Button btnClientes;
     }
 }

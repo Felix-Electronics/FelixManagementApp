@@ -61,7 +61,6 @@
             // 
             // cbCliente
             // 
-            cbCliente.Enabled = false;
             cbCliente.FormattingEnabled = true;
             cbCliente.Location = new Point(84, 26);
             cbCliente.Name = "cbCliente";
@@ -78,7 +77,6 @@
             // 
             // txtMarca
             // 
-            txtMarca.Enabled = false;
             txtMarca.Location = new Point(84, 93);
             txtMarca.Name = "txtMarca";
             txtMarca.Size = new Size(194, 23);
@@ -86,7 +84,6 @@
             // 
             // txtModelo
             // 
-            txtModelo.Enabled = false;
             txtModelo.Location = new Point(84, 139);
             txtModelo.Name = "txtModelo";
             txtModelo.Size = new Size(194, 23);
@@ -94,7 +91,6 @@
             // 
             // txtContra
             // 
-            txtContra.Enabled = false;
             txtContra.Location = new Point(84, 182);
             txtContra.Name = "txtContra";
             txtContra.Size = new Size(194, 23);
@@ -102,7 +98,6 @@
             // 
             // txtAccesorios
             // 
-            txtAccesorios.Enabled = false;
             txtAccesorios.Location = new Point(84, 225);
             txtAccesorios.Name = "txtAccesorios";
             txtAccesorios.Size = new Size(194, 23);
@@ -110,7 +105,6 @@
             // 
             // txtProblema
             // 
-            txtProblema.Enabled = false;
             txtProblema.Location = new Point(84, 268);
             txtProblema.Name = "txtProblema";
             txtProblema.Size = new Size(194, 96);
@@ -119,7 +113,6 @@
             // 
             // cbEstatus
             // 
-            cbEstatus.Enabled = false;
             cbEstatus.FormattingEnabled = true;
             cbEstatus.Location = new Point(84, 382);
             cbEstatus.Name = "cbEstatus";
@@ -128,7 +121,6 @@
             // 
             // timePicker
             // 
-            timePicker.Enabled = false;
             timePicker.Location = new Point(84, 424);
             timePicker.Name = "timePicker";
             timePicker.Size = new Size(194, 23);
@@ -143,7 +135,6 @@
             // 
             // cbTecnico
             // 
-            cbTecnico.Enabled = false;
             cbTecnico.FormattingEnabled = true;
             cbTecnico.Location = new Point(84, 464);
             cbTecnico.Name = "cbTecnico";

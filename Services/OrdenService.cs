@@ -16,7 +16,7 @@ namespace FelixManagementApp.Services
         {
             _context = context;
         }
-        public Task CrearOrdenConEquiposAsync(int clienteId)
+        public Task CrearOrdenConEquiposAsync(int clienteId, decimal total)
         {
             try
             {
@@ -24,6 +24,7 @@ namespace FelixManagementApp.Services
                 {
                     id_cliente = clienteId,
                     fecha_creacion = DateTime.Now,
+                    total = total
                 };
                 _context.Ordenes.Add(orden);
                 _context.SaveChanges();
