@@ -22,8 +22,8 @@ namespace FelixManagementApp.Forms
         List<Equipo> equipos;
         List<Tecnico> tecnicos;
         List<Orden> ordenes;
-        Orden? orden {  get; set; }
-        Cliente? cliente {  get; set; }
+        Orden? orden { get; set; }
+        Cliente? cliente { get; set; }
 
 
         public FrmCrearOrden(IClienteService _clienteService, IEquipoService _equipoService, IOrdenService _ordenService, ITecnicoService _tecnicoService)
@@ -144,7 +144,7 @@ namespace FelixManagementApp.Forms
 
         private async void guardarEquipos()
         {
-            foreach( var equipo in this.equipos)
+            foreach (var equipo in this.equipos)
             {
                 equipo.id_cliente = cliente.id_cliente;
                 equipo.id_orden = orden.id_orden;
@@ -163,12 +163,43 @@ namespace FelixManagementApp.Forms
             txtAccesorios.Text = "";
             txtProblema.Text = "";
             cbEstatus.Text = "";
-            if ( creacion)
+            if (creacion)
             {
                 txtCosto.Text = "";
                 equipos.Clear();
                 Computadoras();
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FrmAgregarCliente frm = new FrmAgregarCliente(_clienteService);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                CargarClientes();
+            }
+        }
+
+        private void btnActualizarCliente_Click(object sender, EventArgs e)
+        {
+            cliente = clientes.ElementAt(cbCliente.SelectedIndex);
+            FrmAgregarCliente frm = new FrmAgregarCliente(_clienteService, cliente);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                CargarClientes();
+            }
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            FrmCliente frm = new FrmCliente(_clienteService, _equipoService, _ordenService, _tecnicoService);
+            frm.ShowDialog();
+        }
+
+        private void btnOrdenes_Click(object sender, EventArgs e)
+        {
+            FrmOrdenes frm = new FrmOrdenes(_equipoService, _tecnicoService, _clienteService, _ordenService);
+            frm.ShowDialog();
         }
     }
 }

@@ -55,7 +55,9 @@
             label12 = new Label();
             label13 = new Label();
             button3 = new Button();
-            button4 = new Button();
+            btnActualizarCliente = new Button();
+            btnClientes = new Button();
+            btnOrdenes = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvComputadoras).BeginInit();
             SuspendLayout();
             // 
@@ -328,20 +330,52 @@
             button3.TabIndex = 45;
             button3.Text = "AGREGAR CLIENTE";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
-            // button4
+            // btnActualizarCliente
             // 
-            button4.BackColor = Color.FromArgb(64, 68, 75);
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Consolas", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(203, 49);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 40);
-            button4.TabIndex = 46;
-            button4.Text = "ACTUALIZAR CLIENTE";
-            button4.UseVisualStyleBackColor = false;
+            btnActualizarCliente.BackColor = Color.FromArgb(64, 68, 75);
+            btnActualizarCliente.FlatAppearance.BorderSize = 0;
+            btnActualizarCliente.FlatStyle = FlatStyle.Flat;
+            btnActualizarCliente.Font = new Font("Consolas", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnActualizarCliente.ForeColor = Color.White;
+            btnActualizarCliente.Location = new Point(203, 49);
+            btnActualizarCliente.Name = "btnActualizarCliente";
+            btnActualizarCliente.Size = new Size(75, 40);
+            btnActualizarCliente.TabIndex = 46;
+            btnActualizarCliente.Text = "ACTUALIZAR CLIENTE";
+            btnActualizarCliente.UseVisualStyleBackColor = false;
+            btnActualizarCliente.Click += btnActualizarCliente_Click;
+            // 
+            // btnClientes
+            // 
+            btnClientes.BackColor = Color.FromArgb(64, 68, 75);
+            btnClientes.FlatAppearance.BorderSize = 0;
+            btnClientes.FlatStyle = FlatStyle.Flat;
+            btnClientes.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClientes.ForeColor = Color.White;
+            btnClientes.Location = new Point(539, 495);
+            btnClientes.Name = "btnClientes";
+            btnClientes.Size = new Size(121, 35);
+            btnClientes.TabIndex = 80;
+            btnClientes.Text = "CLIENTES";
+            btnClientes.UseVisualStyleBackColor = false;
+            btnClientes.Click += btnClientes_Click;
+            // 
+            // btnOrdenes
+            // 
+            btnOrdenes.BackColor = Color.FromArgb(64, 68, 75);
+            btnOrdenes.FlatAppearance.BorderSize = 0;
+            btnOrdenes.FlatStyle = FlatStyle.Flat;
+            btnOrdenes.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnOrdenes.ForeColor = Color.White;
+            btnOrdenes.Location = new Point(667, 495);
+            btnOrdenes.Name = "btnOrdenes";
+            btnOrdenes.Size = new Size(121, 35);
+            btnOrdenes.TabIndex = 79;
+            btnOrdenes.Text = "ORDENES";
+            btnOrdenes.UseVisualStyleBackColor = false;
+            btnOrdenes.Click += btnOrdenes_Click;
             // 
             // FrmCrearOrden
             // 
@@ -349,7 +383,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(44, 47, 51);
             ClientSize = new Size(800, 540);
-            Controls.Add(button4);
+            Controls.Add(btnClientes);
+            Controls.Add(btnOrdenes);
+            Controls.Add(btnActualizarCliente);
             Controls.Add(button3);
             Controls.Add(label12);
             Controls.Add(label13);
@@ -413,6 +449,8 @@
         private Label label12;
         private Label label13;
         private Button button3;
-        private Button button4;
+        private Button btnActualizarCliente;
+        private Button btnClientes;
+        private Button btnOrdenes;
     }
 }

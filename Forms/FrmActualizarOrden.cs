@@ -177,5 +177,30 @@ namespace FelixManagementApp.Forms
             FrmCliente frm = new FrmCliente(_clienteService, _equipoService, _ordenService, _tecnicoService);
             frm.ShowDialog();
         }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            FrmAgregarCliente frm = new FrmAgregarCliente(_clienteService);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                CargarClientes();
+            }
+        }
+
+        private void btnActualizarCliente_Click(object sender, EventArgs e)
+        {
+            cliente = clientes.ElementAt(cbCliente.SelectedIndex);
+            FrmAgregarCliente frm = new FrmAgregarCliente(_clienteService, cliente);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                CargarClientes();
+            }
+        }
+
+        private void btnOrdenes_Click(object sender, EventArgs e)
+        {
+            FrmOrdenes frm = new FrmOrdenes(_equipoService, _tecnicoService, _clienteService, _ordenService);
+            frm.ShowDialog();
+        }
     }
 }
