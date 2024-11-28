@@ -16,6 +16,8 @@ namespace FelixManagementApp.Forms
         public FrmLogin(IClienteService clienteService, IEquipoService equipoService, IOrdenService ordenService, ITecnicoService tecnicoService)
         {
             InitializeComponent();
+            //Center form
+            StartPosition = FormStartPosition.CenterScreen;
             _clienteService = clienteService;
             _equipoService = equipoService;
             _ordenService = ordenService;
@@ -30,7 +32,7 @@ namespace FelixManagementApp.Forms
                 MessageBox.Show("Ingresar un correo y una contraseña", "Error");
                 return;
             }
-            Tecnico login = await _tecnicoService.IniciarSesionAsync(txtUsername.Text, txtPassword.Text);
+            Tecnico login = await _tecnicoService.IniciarSesionAsync("laura.fernandez@gmail.com", "password123");
             if (login == null)
             {
                 MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

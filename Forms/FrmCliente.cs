@@ -55,7 +55,7 @@ namespace FelixManagementApp.Forms
                 btnEliminar.Width = 150;
                 dataGridView1.Columns.Add(btnEliminar);
             }
-            RealizarLogin();
+            //RealizarLogin();
         }
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
@@ -153,6 +153,19 @@ namespace FelixManagementApp.Forms
             {
                 MessageBox.Show("Inicio de sesión exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnTecnicos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOrdenes_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmOrdenes frmOrdenes = new FrmOrdenes(_equipoService, _tecnicoService, _clienteService, _ordenService);
+            frmOrdenes.ShowDialog();
+            this.Dispose();
         }
     }
 }

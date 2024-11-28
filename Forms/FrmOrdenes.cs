@@ -40,7 +40,7 @@ namespace FelixManagementApp.Forms
             dgvOrdenes.DataSource = this.ordenes;
             dgvOrdenes.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvOrdenes.Columns["id_orden"].Visible = false;
-            dgvOrdenes.Columns["fecha_orden"].HeaderText = "Fecha Orden";
+            dgvOrdenes.Columns["fecha_creacion"].HeaderText = "Fecha Orden";
             dgvOrdenes.Columns["total"].HeaderText = "Total";
             dgvOrdenes.Columns["id_cliente"].Visible = false;
             dgvOrdenes.Columns["Cliente"].Visible = false;
@@ -49,7 +49,9 @@ namespace FelixManagementApp.Forms
         private void btnClientes_Click(object sender, EventArgs e)
         {
             FrmCliente frm = new FrmCliente(_clienteService, _equipoService, _ordenService, _tecnicoService);
-            frm.ShowDialog();
+            this.DialogResult = DialogResult.OK;
+            frm.Show();
+            Close();
         }
 
         private void dgvOrdenes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -58,7 +60,7 @@ namespace FelixManagementApp.Forms
             {
                 var orden = (Orden)dgvOrdenes.Rows[e.RowIndex].DataBoundItem;
 
-                FrmActualizarOrden frmActualizarOrd = new FrmActualizarOrden(_clienteService, _equipoService, _ordenService, _ordenService, orden)
+                FrmActualizarOrden frmActualizarOrd = new FrmActualizarOrden(_clienteService, _equipoService, _ordenService, _tecnicoService, orden);
                 if (frmActualizarOrd.ShowDialog() == DialogResult.OK)
                 {
                     Ordenes();

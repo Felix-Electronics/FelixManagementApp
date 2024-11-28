@@ -35,7 +35,6 @@
             lblTitulo = new Label();
             btnCerrarSesion = new Button();
             btnOrdenes = new Button();
-            btnTecnicos = new Button();
             btnAgregarCliente = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -67,6 +66,7 @@
             dataGridView1.Location = new Point(21, 58);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 51;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(54, 57, 63);
             dataGridViewCellStyle3.ForeColor = Color.White;
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
@@ -83,7 +83,7 @@
             lblTitulo.ForeColor = Color.White;
             lblTitulo.Location = new Point(339, 15);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(119, 37);
+            lblTitulo.Size = new Size(146, 46);
             lblTitulo.TabIndex = 1;
             lblTitulo.Text = "Clientes";
             // 
@@ -114,20 +114,7 @@
             btnOrdenes.TabIndex = 3;
             btnOrdenes.Text = "Ordenes";
             btnOrdenes.UseVisualStyleBackColor = false;
-            // 
-            // btnTecnicos
-            // 
-            btnTecnicos.BackColor = Color.FromArgb(64, 68, 75);
-            btnTecnicos.FlatAppearance.BorderSize = 0;
-            btnTecnicos.FlatStyle = FlatStyle.Flat;
-            btnTecnicos.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTecnicos.ForeColor = Color.White;
-            btnTecnicos.Location = new Point(502, 409);
-            btnTecnicos.Name = "btnTecnicos";
-            btnTecnicos.Size = new Size(123, 29);
-            btnTecnicos.TabIndex = 4;
-            btnTecnicos.Text = " Tecnicos";
-            btnTecnicos.UseVisualStyleBackColor = false;
+            btnOrdenes.Click += btnOrdenes_Click;
             // 
             // btnAgregarCliente
             // 
@@ -150,7 +137,6 @@
             BackColor = Color.FromArgb(44, 47, 51);
             ClientSize = new Size(800, 450);
             Controls.Add(btnAgregarCliente);
-            Controls.Add(btnTecnicos);
             Controls.Add(btnOrdenes);
             Controls.Add(btnCerrarSesion);
             Controls.Add(lblTitulo);
