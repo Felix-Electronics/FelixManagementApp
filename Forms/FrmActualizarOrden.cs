@@ -28,6 +28,7 @@ namespace FelixManagementApp.Forms
         public FrmActualizarOrden(IClienteService _clienteService, IEquipoService _equipoService, IOrdenService _ordenService, ITecnicoService _tecnicoService, Orden orden)
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
             this._clienteService = _clienteService;
             this._equipoService = _equipoService;
             this._ordenService = _ordenService;

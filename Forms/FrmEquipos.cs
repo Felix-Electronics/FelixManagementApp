@@ -23,6 +23,7 @@ namespace FelixManagementApp.Forms
         public FrmEquipos(IEquipoService equipoService, ITecnicoService tecnicoService, IClienteService clienteService, IOrdenService ordenService)
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
             _equipoService = equipoService;
             _tecnicoService = tecnicoService;
             _clienteService = clienteService;

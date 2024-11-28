@@ -29,6 +29,7 @@ namespace FelixManagementApp.Forms
         public FrmCrearOrden(IClienteService _clienteService, IEquipoService _equipoService, IOrdenService _ordenService, ITecnicoService _tecnicoService)
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
             this._clienteService = _clienteService;
             this._equipoService = _equipoService;
             this._ordenService = _ordenService;

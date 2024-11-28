@@ -16,6 +16,7 @@ namespace FelixManagementApp.Forms
         public FrmLogin(IClienteService clienteService, IEquipoService equipoService, IOrdenService ordenService, ITecnicoService tecnicoService)
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
             //Center form
             StartPosition = FormStartPosition.CenterScreen;
             _clienteService = clienteService;
