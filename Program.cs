@@ -57,6 +57,7 @@ namespace FelixManagementApp
             services.AddTransient<FrmCliente>();
             services.AddTransient<FrmAgregarCliente>();
             services.AddTransient<FrmCrearOrden>();
+            services.AddTransient<FrmActualizarOrden>();
             services.AddTransient<FrmEquipos>();
             services.AddTransient<FrmOrdenes>();
             services.AddTransient<FrmLogin>();
