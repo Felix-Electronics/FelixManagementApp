@@ -51,5 +51,19 @@ namespace FelixManagementApp.Forms
             FrmCliente frm = new FrmCliente(_clienteService, _equipoService, _ordenService, _tecnicoService);
             frm.ShowDialog();
         }
+
+        private void dgvOrdenes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var orden = (Orden)dgvOrdenes.Rows[e.RowIndex].DataBoundItem;
+
+                FrmActualizarOrden frmActualizarOrd = new FrmActualizarOrden(_clienteService, _equipoService, _ordenService, _ordenService, orden)
+                if (frmActualizarOrd.ShowDialog() == DialogResult.OK)
+                {
+                    Ordenes();
+                }
+            }
+        }
     }
 }

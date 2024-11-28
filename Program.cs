@@ -33,7 +33,7 @@ namespace FelixManagementApp
 
             using (var serviceProvider = services.BuildServiceProvider())
             {
-                var mainForm = serviceProvider.GetRequiredService<FrmEquipos>();
+                var mainForm = serviceProvider.GetRequiredService<FrmLogin>();
                 Application.Run(mainForm);
             }
         }
