@@ -182,6 +182,11 @@ namespace FelixManagementApp.Forms
 
         private void btnActualizarCliente_Click(object sender, EventArgs e)
         {
+            if (cbCliente.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             cliente = clientes.ElementAt(cbCliente.SelectedIndex);
             FrmAgregarCliente frm = new FrmAgregarCliente(_clienteService, cliente);
             if (frm.ShowDialog() == DialogResult.OK)

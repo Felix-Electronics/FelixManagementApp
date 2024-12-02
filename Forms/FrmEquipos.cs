@@ -23,6 +23,8 @@ namespace FelixManagementApp.Forms
         public FrmEquipos(IEquipoService equipoService, ITecnicoService tecnicoService, IClienteService clienteService, IOrdenService ordenService)
         {
             InitializeComponent();
+            //Center form
+            StartPosition = FormStartPosition.CenterScreen;
             _equipoService = equipoService;
             _tecnicoService = tecnicoService;
             _clienteService = clienteService;
@@ -64,6 +66,11 @@ namespace FelixManagementApp.Forms
         {
             FrmOrdenes frm = new FrmOrdenes(_equipoService, _tecnicoService, _clienteService, _ordenService);
             frm.ShowDialog();
+        }
+
+        private void btnTecnicos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

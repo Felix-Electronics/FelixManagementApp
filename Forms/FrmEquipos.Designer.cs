@@ -32,7 +32,6 @@
             lblTitulo = new Label();
             btnCerrarSesion = new Button();
             dgvEquipos = new DataGridView();
-            btnTecnicos = new Button();
             btnClientes = new Button();
             btnOrdenes = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEquipos).BeginInit();
@@ -80,20 +79,6 @@
             dgvEquipos.Size = new Size(776, 256);
             dgvEquipos.TabIndex = 8;
             // 
-            // btnTecnicos
-            // 
-            btnTecnicos.BackColor = Color.FromArgb(64, 68, 75);
-            btnTecnicos.FlatAppearance.BorderSize = 0;
-            btnTecnicos.FlatStyle = FlatStyle.Flat;
-            btnTecnicos.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTecnicos.ForeColor = Color.White;
-            btnTecnicos.Location = new Point(390, 394);
-            btnTecnicos.Name = "btnTecnicos";
-            btnTecnicos.Size = new Size(124, 36);
-            btnTecnicos.TabIndex = 9;
-            btnTecnicos.Text = "Técnicos";
-            btnTecnicos.UseVisualStyleBackColor = false;
-            // 
             // btnClientes
             // 
             btnClientes.BackColor = Color.FromArgb(64, 68, 75);
@@ -132,7 +117,6 @@
             ClientSize = new Size(800, 450);
             Controls.Add(btnOrdenes);
             Controls.Add(btnClientes);
-            Controls.Add(btnTecnicos);
             Controls.Add(dgvEquipos);
             Controls.Add(btnCerrarSesion);
             Controls.Add(lblTitulo);
@@ -151,7 +135,6 @@
         private Label lblTitulo;
         private Button btnCerrarSesion;
         private DataGridView dgvEquipos;
-        private Button btnTecnicos;
         private Button btnClientes;
         private Button btnOrdenes;
     }

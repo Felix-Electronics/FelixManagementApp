@@ -67,5 +67,14 @@ namespace FelixManagementApp.Forms
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmCrearOrden frmCrearOrden = new FrmCrearOrden(_clienteService, _equipoService, _ordenService, _tecnicoService);
+            if (frmCrearOrden.ShowDialog() == DialogResult.OK)
+            {
+                Ordenes();
+            }
+        }
     }
 }

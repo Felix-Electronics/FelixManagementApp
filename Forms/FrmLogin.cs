@@ -32,7 +32,7 @@ namespace FelixManagementApp.Forms
                 MessageBox.Show("Ingresar un correo y una contraseña", "Error");
                 return;
             }
-            Tecnico login = await _tecnicoService.IniciarSesionAsync("laura.fernandez@gmail.com", "password123");
+            Tecnico login = await _tecnicoService.IniciarSesionAsync(txtUsername.Text, txtPassword.Text);
             if (login == null)
             {
                 MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
