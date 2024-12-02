@@ -175,8 +175,10 @@ namespace FelixManagementApp.Forms
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
+            this.Close();
             FrmCliente frm = new FrmCliente(_clienteService, _equipoService, _ordenService, _tecnicoService);
             frm.ShowDialog();
+            this.Dispose();
         }
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
@@ -200,8 +202,10 @@ namespace FelixManagementApp.Forms
 
         private void btnOrdenes_Click(object sender, EventArgs e)
         {
+            this.Close();
             FrmOrdenes frm = new FrmOrdenes(_equipoService, _tecnicoService, _clienteService, _ordenService);
             frm.ShowDialog();
+            this.Dispose();
         }
     }
 }

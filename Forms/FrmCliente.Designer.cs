@@ -83,7 +83,7 @@
             lblTitulo.ForeColor = Color.White;
             lblTitulo.Location = new Point(339, 15);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(146, 46);
+            lblTitulo.Size = new Size(119, 37);
             lblTitulo.TabIndex = 1;
             lblTitulo.Text = "Clientes";
             // 
@@ -100,6 +100,7 @@
             btnCerrarSesion.TabIndex = 2;
             btnCerrarSesion.Text = "Cerrar Sesión";
             btnCerrarSesion.UseVisualStyleBackColor = false;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // btnOrdenes
             // 

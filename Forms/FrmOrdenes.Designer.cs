@@ -87,6 +87,7 @@
             button1.TabIndex = 10;
             button1.Text = "Nueva Orden";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // btnClientes
             // 

@@ -169,5 +169,13 @@ namespace FelixManagementApp.Forms
             frmOrdenes.ShowDialog();
             this.Dispose();
         }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmLogin frml = new FrmLogin(_clienteService, _equipoService, _ordenService, _tecnicoService);
+            frml.ShowDialog();
+            this.Dispose();
+        }
     }
 }
