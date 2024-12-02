@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             lblTitulo = new Label();
-            btnCerrarSesion = new Button();
             dgvOrdenes = new DataGridView();
             button1 = new Button();
             btnClientes = new Button();
@@ -46,20 +45,6 @@
             lblTitulo.Size = new Size(153, 46);
             lblTitulo.TabIndex = 3;
             lblTitulo.Text = "Ordenes";
-            // 
-            // btnCerrarSesion
-            // 
-            btnCerrarSesion.BackColor = Color.FromArgb(64, 68, 75);
-            btnCerrarSesion.FlatAppearance.BorderSize = 0;
-            btnCerrarSesion.FlatStyle = FlatStyle.Flat;
-            btnCerrarSesion.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCerrarSesion.ForeColor = Color.White;
-            btnCerrarSesion.Location = new Point(595, 12);
-            btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(193, 36);
-            btnCerrarSesion.TabIndex = 8;
-            btnCerrarSesion.Text = "Cerrar Sesión";
-            btnCerrarSesion.UseVisualStyleBackColor = false;
             // 
             // dgvOrdenes
             // 
@@ -97,7 +82,7 @@
             btnClientes.Name = "btnClientes";
             btnClientes.Size = new Size(123, 36);
             btnClientes.TabIndex = 11;
-            btnClientes.Text = "Clientes";
+            btnClientes.Text = "Volver";
             btnClientes.UseVisualStyleBackColor = false;
             btnClientes.Click += btnClientes_Click;
             // 
@@ -110,7 +95,6 @@
             Controls.Add(btnClientes);
             Controls.Add(button1);
             Controls.Add(dgvOrdenes);
-            Controls.Add(btnCerrarSesion);
             Controls.Add(lblTitulo);
             Name = "FrmOrdenes";
             Text = "FrmOrdenes";
@@ -122,7 +106,6 @@
         #endregion
 
         private Label lblTitulo;
-        private Button btnCerrarSesion;
         private DataGridView dgvOrdenes;
         private Button button1;
         private Button btnClientes;

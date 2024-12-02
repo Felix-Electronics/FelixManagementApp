@@ -12,6 +12,7 @@ namespace FelixManagementApp.Forms
         public FrmAgregarCliente(IClienteService clienteService, Cliente? clienteExistente = null)
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
             _clienteService = clienteService;
 
             if (clienteExistente != null)

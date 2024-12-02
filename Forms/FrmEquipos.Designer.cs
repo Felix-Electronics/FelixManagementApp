@@ -30,10 +30,8 @@
         {
             label1 = new Label();
             lblTitulo = new Label();
-            btnCerrarSesion = new Button();
             dgvEquipos = new DataGridView();
             btnClientes = new Button();
-            btnOrdenes = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEquipos).BeginInit();
             SuspendLayout();
             // 
@@ -56,24 +54,10 @@
             lblTitulo.TabIndex = 2;
             lblTitulo.Text = "Equipos de Clientes";
             // 
-            // btnCerrarSesion
-            // 
-            btnCerrarSesion.BackColor = Color.FromArgb(64, 68, 75);
-            btnCerrarSesion.FlatAppearance.BorderSize = 0;
-            btnCerrarSesion.FlatStyle = FlatStyle.Flat;
-            btnCerrarSesion.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCerrarSesion.ForeColor = Color.White;
-            btnCerrarSesion.Location = new Point(595, 22);
-            btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(193, 36);
-            btnCerrarSesion.TabIndex = 7;
-            btnCerrarSesion.Text = "Cerrar Sesión";
-            btnCerrarSesion.UseVisualStyleBackColor = false;
-            // 
             // dgvEquipos
             // 
             dgvEquipos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEquipos.Location = new Point(12, 132);
+            dgvEquipos.Location = new Point(11, 132);
             dgvEquipos.Name = "dgvEquipos";
             dgvEquipos.RowHeadersWidth = 51;
             dgvEquipos.Size = new Size(776, 256);
@@ -86,39 +70,22 @@
             btnClientes.FlatStyle = FlatStyle.Flat;
             btnClientes.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnClientes.ForeColor = Color.White;
-            btnClientes.Location = new Point(525, 394);
+            btnClientes.Location = new Point(349, 403);
             btnClientes.Name = "btnClientes";
             btnClientes.Size = new Size(127, 36);
             btnClientes.TabIndex = 10;
-            btnClientes.Text = "Clientes";
+            btnClientes.Text = "Volver";
             btnClientes.UseVisualStyleBackColor = false;
             btnClientes.Click += btnClientes_Click;
-            // 
-            // btnOrdenes
-            // 
-            btnOrdenes.BackColor = Color.FromArgb(64, 68, 75);
-            btnOrdenes.FlatAppearance.BorderSize = 0;
-            btnOrdenes.FlatStyle = FlatStyle.Flat;
-            btnOrdenes.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnOrdenes.ForeColor = Color.White;
-            btnOrdenes.Location = new Point(663, 394);
-            btnOrdenes.Name = "btnOrdenes";
-            btnOrdenes.Size = new Size(124, 36);
-            btnOrdenes.TabIndex = 11;
-            btnOrdenes.Text = "Ordenes";
-            btnOrdenes.UseVisualStyleBackColor = false;
-            btnOrdenes.Click += btnOrdenes_Click;
             // 
             // FrmEquipos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(44, 47, 51);
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnOrdenes);
+            ClientSize = new Size(800, 451);
             Controls.Add(btnClientes);
             Controls.Add(dgvEquipos);
-            Controls.Add(btnCerrarSesion);
             Controls.Add(lblTitulo);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -133,9 +100,7 @@
 
         private Label label1;
         private Label lblTitulo;
-        private Button btnCerrarSesion;
         private DataGridView dgvEquipos;
         private Button btnClientes;
-        private Button btnOrdenes;
     }
 }

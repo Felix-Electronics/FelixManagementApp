@@ -24,10 +24,12 @@ namespace FelixManagementApp.Forms
         public FrmCliente(IClienteService clienteService, IEquipoService equipoService, IOrdenService ordenService, ITecnicoService tecnicoService)
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
             _clienteService = clienteService;
             _equipoService = equipoService;
             _ordenService = ordenService;
             _tecnicoService = tecnicoService;
+
             LoadClientes();
         }
 
@@ -162,10 +164,23 @@ namespace FelixManagementApp.Forms
 
         private void btnOrdenes_Click(object sender, EventArgs e)
         {
-            this.Close();
             FrmOrdenes frmOrdenes = new FrmOrdenes(_equipoService, _tecnicoService, _clienteService, _ordenService);
             frmOrdenes.ShowDialog();
+            LoadClientes();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmLogin frml = new FrmLogin(_clienteService, _equipoService, _ordenService, _tecnicoService);
+            frml.ShowDialog();
             this.Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmEquipos frmEquipos = new FrmEquipos(_equipoService, _tecnicoService, _clienteService, _ordenService);
+            frmEquipos.ShowDialog();
         }
     }
 }

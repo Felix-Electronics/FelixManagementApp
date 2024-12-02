@@ -29,6 +29,7 @@ namespace FelixManagementApp.Forms
         public FrmCrearOrden(IClienteService _clienteService, IEquipoService _equipoService, IOrdenService _ordenService, ITecnicoService _tecnicoService)
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
             this._clienteService = _clienteService;
             this._equipoService = _equipoService;
             this._ordenService = _ordenService;
@@ -197,14 +198,16 @@ namespace FelixManagementApp.Forms
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
+            this.Close();
             FrmCliente frm = new FrmCliente(_clienteService, _equipoService, _ordenService, _tecnicoService);
             frm.ShowDialog();
+            this.Dispose();
         }
 
         private void btnOrdenes_Click(object sender, EventArgs e)
         {
-            FrmOrdenes frm = new FrmOrdenes(_equipoService, _tecnicoService, _clienteService, _ordenService);
-            frm.ShowDialog();
+            this.DialogResult = DialogResult.OK;
+            Close();
         }
     }
 }

@@ -58,19 +58,28 @@ namespace FelixManagementApp.Forms
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            FrmCliente frm = new FrmCliente(_clienteService, _equipoService, _ordenService, _tecnicoService);
-            frm.ShowDialog();
+            this.DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void btnOrdenes_Click(object sender, EventArgs e)
         {
             FrmOrdenes frm = new FrmOrdenes(_equipoService, _tecnicoService, _clienteService, _ordenService);
             frm.ShowDialog();
+            Equipos();
         }
 
         private void btnTecnicos_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmLogin frmLogin = new FrmLogin(_clienteService, _equipoService, _ordenService, _tecnicoService);
+            frmLogin.ShowDialog();
+            this.Dispose();
         }
     }
 }

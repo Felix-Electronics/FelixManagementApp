@@ -36,6 +36,7 @@
             btnCerrarSesion = new Button();
             btnOrdenes = new Button();
             btnAgregarCliente = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -100,6 +101,7 @@
             btnCerrarSesion.TabIndex = 2;
             btnCerrarSesion.Text = "Cerrar Sesión";
             btnCerrarSesion.UseVisualStyleBackColor = false;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // btnOrdenes
             // 
@@ -108,7 +110,7 @@
             btnOrdenes.FlatStyle = FlatStyle.Flat;
             btnOrdenes.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnOrdenes.ForeColor = Color.White;
-            btnOrdenes.Location = new Point(650, 409);
+            btnOrdenes.Location = new Point(499, 409);
             btnOrdenes.Name = "btnOrdenes";
             btnOrdenes.Size = new Size(123, 29);
             btnOrdenes.TabIndex = 3;
@@ -131,11 +133,27 @@
             btnAgregarCliente.UseVisualStyleBackColor = false;
             btnAgregarCliente.Click += btnAgregarCliente_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(64, 68, 75);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(639, 409);
+            button1.Name = "button1";
+            button1.Size = new Size(123, 29);
+            button1.TabIndex = 6;
+            button1.Text = "Equipos";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // FrmCliente
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(44, 47, 51);
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(btnAgregarCliente);
             Controls.Add(btnOrdenes);
             Controls.Add(btnCerrarSesion);
@@ -158,5 +176,6 @@
         private Button btnOrdenes;
         private Button btnTecnicos;
         private Button btnAgregarCliente;
+        private Button button1;
     }
 }
